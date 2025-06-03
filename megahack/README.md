@@ -5,7 +5,7 @@
 ```
 megahack
 └ default
-  └ v8.0.6alpha
+  └ v8.0.6-alpha
     └ lib.zip
       ├ hackpro.dll
       ├ hackproldr.dll
@@ -15,7 +15,7 @@ megahack
 ```
 megahack
 └ geode
-  └ v8.0.6alpha-geode
+  └ v8.0.6-alpha
     └ absolllute.megahack.geode
 ```
 ## Warning
