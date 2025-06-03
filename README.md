@@ -6,9 +6,9 @@ If you like it, fork or download and upload it somewhere to preserve the chance!
 I am not Absolllute, but...
 After trying MH Pro, buy it if you like it! Buying MegaHack Pro officially will give you stable updates, Absolllute support and warranty.
 
-**I DO NOT ENDORSE PIRACY, I DIDN'T BUY MEGAHACK, BUT I DON'T USE IT, I USE ECLIPSE MENU**
+**I DO NOT PROMOTE PIRACY, I DIDN'T BUY MEGAHACK, BUT I DON'T USE IT, I USE ECLIPSE MENU**
 ## Installation
-Download precompiled installer from releases, and follow instructions to try MegaHack, COPY ORIGINAL XInput1_4.dll!
+Download precompiled installer from releases, and follow instructions to try MegaHack.
 Or use main.py from source, with requests and PyQt6 packages installed.
 
 ## FAQ
@@ -20,12 +20,8 @@ Partially. Installer replica is open source, can be used as a base for your mods
 Partially. It runs the installer and copies needed files, but MegaHack runs only on Windows, so you can try the installer in macOS to try GD in Wine/CrossOver.
 
 ### Can I uninstall MegaHack?
-Absolutely. If using Geode, just delete geode/mods/absolllute.megahack.geode, if using default:
-1. Download or find your own copied XInput1_4.dll
-2. Copy original to your game folder
-3. Delete hackpro.dll and hackproldr.dll
-
-Or just reinstall the game.
+Use the option to uninstall MegaHack. Select version (Default or Geode). Then click Uninstall.
+Be careful! Or you will break a little Geode install, so you need to copy XInput1_4.dll from Geode release.
 
 ### Licensed?
 MIT for the installer, but MHPro files were leaked, so I made the installer.
