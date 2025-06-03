@@ -13,7 +13,7 @@ import shutil
 
 
 class MHInstaller(QWidget):
-    # Встроенный URL для update.json на GitHub
+    # URL к update.json на GitHub
     UPDATE_JSON_URL = "https://raw.githubusercontent.com/goosedev72-projects/MH-FreeInstaller/main/update.json"
 
     def __init__(self):
@@ -29,14 +29,14 @@ class MHInstaller(QWidget):
         # Создание интерфейса
         self.create_ui()
 
-        # Загрузка данных из JSON с GitHub
+        # Загрузка начальных данных
         self.load_update_data()
 
     def create_ui(self):
         layout = QVBoxLayout()
 
         # Текст
-        title_label = QLabel("Select MegaHack Pro version to install")
+        title_label = QLabel("Select MH version to install")
         title_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
         layout.addWidget(title_label)
 
@@ -53,6 +53,10 @@ class MHInstaller(QWidget):
         versions_layout.addWidget(self.mh_combo)
 
         layout.addLayout(versions_layout)
+
+        # Кнопка обновления MH List
+        self.update_list_btn = QPushButton("Update MH List", clicked=self.reload_update_data)
+        layout.addWidget(self.update_list_btn)
 
         # Выбор папки GD
         folder_layout = QHBoxLayout()
@@ -77,16 +81,11 @@ class MHInstaller(QWidget):
             response.raise_for_status()
             self.update_data = response.json()
 
-            # Заполнить GD версии
-            if "gd_versions" in self.update_data:
-                gd_versions = list(self.update_data["gd_versions"].keys())
-                self.gd_combo.addItems(gd_versions)
+            # Обновить комбобоксы
+            self.update_gd_versions_ui()
 
-                # Установить первую версию по умолчанию
-                if gd_versions:
-                    self.update_mh_versions(gd_versions[0])
-            else:
-                raise ValueError("Invalid update.json structure: missing 'gd_versions'")
+            # Сообщение об успехе
+            QMessageBox.information(self, "Update Success", "MH list updated successfully!")
 
         except requests.exceptions.RequestException as e:
             QMessageBox.critical(self, "Network Error",
@@ -95,6 +94,30 @@ class MHInstaller(QWidget):
             QMessageBox.critical(self, "Error", "Failed to parse update.json")
         except Exception as e:
             QMessageBox.critical(self, "Error", f"Failed to load update data: {str(e)}")
+
+    def reload_update_data(self):
+        reply = QMessageBox.question(
+            self, "Confirm Update",
+            "Are you sure you want to update the MH list from GitHub?",
+            QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
+            QMessageBox.StandardButton.No
+        )
+
+        if reply == QMessageBox.StandardButton.Yes:
+            self.load_update_data()
+
+    def update_gd_versions_ui(self):
+        # Очистить предыдущие значения
+        self.gd_combo.clear()
+        self.mh_combo.clear()
+
+        if self.update_data and "gd_versions" in self.update_data:
+            gd_versions = list(self.update_data["gd_versions"].keys())
+            self.gd_combo.addItems(gd_versions)
+
+            # Установить первую версию по умолчанию
+            if gd_versions:
+                self.update_mh_versions(gd_versions[0])
 
     def update_mh_versions(self, gd_version):
         self.mh_combo.clear()
@@ -188,7 +211,7 @@ class MHInstaller(QWidget):
             QMessageBox.critical(self, "Error", f"Failed to install MH: {str(e)}")
 
     def download_and_install(self, mh_data):
-        base_url = self.update_data.get("base_url", "https://raw.githubusercontent.com/goosedev72-projects/MH-FreeInstaller/main")
+        base_url = self.update_data.get("base_url", "https://github.com/goosedev72-projects/MH-FreeInstaller/raw/refs/heads/main/")
         variant = mh_data["variant"]
         mh_version = mh_data["version"]
 
