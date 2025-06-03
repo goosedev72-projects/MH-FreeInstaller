@@ -5,11 +5,11 @@
       "required_files": ["GeometryDash.exe"],
       "mh_versions": [
         {
-          "version": "v8.0.6alpha",
+          "version": "v8.0.6-alpha",
           "variant": "default"
         },
         {
-          "version": "v8.0.6alpha-geode",
+          "version": "v8.0.6-alpha",
           "variant": "geode"
         }
       ]
