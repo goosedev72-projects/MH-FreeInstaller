@@ -1,0 +1,18 @@
+{
+  "base_url": "https://raw.githubusercontent.com/goosedev72-projects/MH-FreeInstaller/main",
+  "gd_versions": {
+    "2.2074": {
+      "required_files": ["GeometryDash.exe"],
+      "mh_versions": [
+        {
+          "version": "v8.0.6alpha",
+          "variant": "default"
+        },
+        {
+          "version": "v8.0.6alpha-geode",
+          "variant": "geode"
+        }
+      ]
+    }
+  }
+}
