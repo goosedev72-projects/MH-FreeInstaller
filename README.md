@@ -37,6 +37,6 @@ Unlike the original, you can try MegaHack, and it won't vanish anywhere. But if 
 Maybe I will make it. WINDOWS ONLY
 
 ## Contact
-Telegram: @GooseDev72
-Or open the issue
+Telegram: @GooseDev72, or open the issue
+
 Absolllute, waiting for your warning, I will delete it, I promise
