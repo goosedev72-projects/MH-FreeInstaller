@@ -14,7 +14,7 @@ import shutil
 
 class MHInstaller(QWidget):
     # URL к update.json на GitHub
-    UPDATE_JSON_URL = "https://raw.githubusercontent.com/goosedev72-projects/MH-FreeInstaller/raw/refs/heads/main/update.json"
+    UPDATE_JSON_URL = "https://github.com/goosedev72-projects/MH-FreeInstaller/raw/refs/heads/main/update.json"
 
     def __init__(self):
         super().__init__()
