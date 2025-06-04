@@ -27,12 +27,12 @@ Be careful! Or you will break a little Geode install, so you need to copy XInput
 MIT for the installer, but MHPro files were leaked, so I made the installer.
 
 ### Do I need to pay to use this installer?
-Unlike the original, you can try MegaHack, and it won't vanish anywhere. But if love MegaHack, buy it to support Absolllute's work.
+Unlike the original, you can try MegaHack, and it won't vanish anywhere. But if you love MegaHack, buy it to support Absolllute's work.
 
 ### Geode installer mod?
 Maybe I will make it. WINDOWS ONLY
 
 ## Contact
-Telegram: @GooseDev72, or open the issue
+Telegram: @GooseDev72, or open the issue/discussion 
 
 Absolllute, waiting for your warning, I will delete it, I promise
